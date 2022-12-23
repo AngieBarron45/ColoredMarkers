@@ -1,0 +1,59 @@
+h1{
+    text-align: center;
+}
+.marker{
+    width: 200px;
+    height: 25px;
+    margin: 10px auto; /* MARGIN shorthand / Para centrar el marcador MARKER en la página, establcemos MARGIN que aplica el margen a todo y lo CENTRAMOS con AUTO, contiene margin-top, margin-right, margin-bottom, and margin-left all to auto. */
+    /* Cuando la propiedad margin abreviada tiene dos valores, establece margin-top y margin-bottom en el primer valor, y margin-left y margin-right en el segundo valor. */
+}
+.red{ /* Colocamos la segunda clase (one) para colocar el color rojo solo al primer Marker. */
+/* COMENTARIOS DE CÓMO FUNCIONA LINEAR GRADIENT. */
+
+    /* background-color: rgb(255, 0, 0);*/ /* Los colores RGB van del 0 al 255 para la intensidad de este color. Mientras más pequeño el número, más oscuro. Mientras más grande la cantidad, más claro. 0 = NEGRO y 255 = BLANCO. */
+    /*background: linear-gradient(90deg, rgb(255, 0, 0) 75%, rgb(0, 255, 0), rgb(0, 0, 255)); /* LINEAR-GRADIENT / gradienteDirection es la dirección de la línea utilizada para la transición. color1 y color2 son argumentos de color, que son los colores que se usarán en la transición misma. Estos pueden ser de cualquier tipo de color, incluidas las palabras clave de color, hexadecimal, rgb o hsl. */
+    /* Aplicamos un degradado de rojo a verde a lo largo de una línea de 90 grados al primer marcador. */
+    /* El linear-gradient necesita de al menos 2 colores para funcionar, colocamos rojo y verde en rgb con 90 grados. */
+    /* Cuando colocamos frente a algún argumento de color que deseemos un PORCENTAJE, será el porcentaje que ocupe ese color. */
+
+/* MARCADORES DE LA PRÁCTICA */
+
+    background: linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27));
+    /* REMOVEMOS los Porcentajes de los argumentos de todos los colores debido a que la función LINEAR-GRADIENT calcula automáticamente estos valores y coloca los colores uniformemente a lo largo de la línea de degradado de forma predeterminada. */
+    /* También REMOVEMOS DEG, los grados debido a que la función LINEAR-GRADIENT organiza los colores de arriba a abajo, o a lo largo de una línea de 180 grados, de forma predeterminada. */
+    box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8); /* BOX SHADOW / el PRIMER valor es el grosor de la sombra en el EJE X (VERTICAL) y el SEGUNDO valor es el grosor en el EJE Y (HORIZONTAL). */
+    /* SHADOW puede colocarse del lado contrario si usamos valores negativos como: -5px, como si estuvieramos en una un plano cartesianode estas coordenadas con valores positivos y negativos. */
+    /* OFFSETX= 0, OFFSETY= 0, BLURRADIUS= 20px, SPREDRADIUS= 0 */
+    /* blurRadius / DESENFOQUE de la sombra, se hace como difuminado a los pixeles que le damos, en este caso 20px. */
+    /* spreadRdius / EXPANSIÓN de la sombra a la cantidad de pixeles que le demos. */
+}
+.green{
+    background: linear-gradient(#55680d, #71f53e, #116c31);
+    box-shadow: 0 0 20px 0 #3B7E20CC;
+}
+.blue{
+    background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%));
+    box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8);
+    /* HUE (MATÍZ) = 223, SATURATION (SATIRACIÓN) = 59%, LIGHTNESS (LIGEREZA) = 31%, ALPHA CHANNEL (CANAL ALFA) = 0.8 TRANSPAENCIA. */
+}
+.container{
+    background-color: rgb(255, 255, 255); /* Colores RGB (Red, Green, Blues) */
+    padding: 10px 0; /* Padding TOP and BOTTOM = 10px y Padding LEFT and RIGHT = 0 */
+}
+.sleeve{
+    width: 110px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 50%); /* RGBA function / A= Alpha y sirve para la transparencia u opacidad que tiene el color. */
+    /*opacity: 0.5; /* OPACITY / puede controlar qué tan opaco o transparente es un elemento. Con el valor 0, o 0%, el elemento será completamente transparente, y con el valor 1.0, o 100%, el elemento será completamente opaco como lo es por defecto. */
+    border-left: 10px double rgba(0, 0, 0, 75%); /* SHORTHAND border-left / Con esta única propiedad acortamos el colocar WIDTH, STYLE, COLOR, colocando todo en esta propiedad en este orden y SIN COMAS. */
+    /* WIDTH / Colocamos 10px como grosor del borde. */
+    /* STYLE / Colocamos DOUBLE para hacer el borde doble pero el mismo ancho de 10px. */
+    /* COLOR / Se pone como predeterminado el coloc negro pero lo colocamos nuevamente con OPACIDAD de 75% para ver el funcionamiento de esta propiedad. */
+}
+.cap{
+    width: 60px;
+    height: 25px;
+}
+.cap, .sleeve{
+    display: inline-block; /* Parece que tu manga desapareció, pero no te preocupes, todavía está allí. Lo que sucedió es que su nuevo cap div está ocupando todo el ancho del marcador y está empujando la funda hacia la siguiente línea. Esto se debe a que la propiedad de visualización predeterminada para elementos div es bloque. Entonces, cuando dos elementos de bloque están uno al lado del otro, se apilan como bloques reales. Por ejemplo, sus elementos de marcador están todos apilados uno encima del otro. */
+}
